@@ -1,0 +1,308 @@
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+}
+.dataTables_processing {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 250px;
+    margin-left: -125px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    padding: 2px 0;
+}
+.dataTables_length {
+    width: 40%;
+    float: left;
+}
+.dataTables_filter {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+.dataTables_info {
+    width: 50%;
+    float: left;
+}
+.dataTables_paginate {
+    float: right;
+    text-align: right;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables nbgDataTables
+ */
+table.nbgDataTables {
+    margin: 0 auto;
+    width: 100%;
+    clear: both;
+    border-collapse: collapse;
+}
+table.nbgDataTables a, table.nbgDataTables a:link, table.nbgDataTables a:active, table.nbgDataTables a:visited {
+    color: #63A21E;
+}
+table.nbgDataTables tfoot th {
+    padding: 3px 0px 3px 10px;
+    font-weight: normal;
+}
+table.nbgDataTables td {
+    padding: 5px 5px 5px 5px;
+	border-right: 1px solid #fff;
+}
+
+table.nbgDataTables th {
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd ;
+}
+
+table.nbgDataTables th:nth-child(1) {
+      border-left: 1px solid #ddd;
+}
+
+table.nbgDataTables th:last-child {
+      border-right: 1px solid #ddd;
+}
+
+table.nbgDataTables td:nth-child(1) {
+      border-left: 1px solid #ddd;
+}
+
+table.nbgDataTables td:last-child {
+      border-right: 1px solid #ddd;
+}
+
+table.nbgDataTables td.center {
+    text-align: center;
+}
+.toolbar-i { 
+	border-style:solid;
+	border-width: 0 1px 1px 1px;
+	border-color: #CBCBCB;
+	background-color: #E2E2E2 ;
+}
+
+table.nbgDataTables td.numeric_column { 
+	text-align:right;
+	padding-right:10px;
+}
+
+table.nbgDataTables td.image_column { 
+	text-align:center;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+
+.sorting_asc {
+    background: url('../images/sort_asc.png') no-repeat center right;
+}
+
+.sorting_desc {
+    background: url('../images/sort_desc.png') no-repeat center right;
+}
+
+.sorting {
+    background: url('../images/sort_both.png') no-repeat center right;
+}
+
+.sorting_asc_disabled {
+    background: url('../images/sort_asc_disabled.png') no-repeat center right;
+}
+
+.sorting_desc_disabled {
+    background: url('../images/sort_desc_disabled.png') no-repeat center right;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+.dataTables_scroll {
+    clear: both;
+}
+.dataTables_scrollBody {
+    -webkit-overflow-scrolling: touch;
+}
+.top, .bottom {
+    padding: 15px;
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+}
+.top .dataTables_info {
+    float: none;
+}
+.clear {
+    clear: both;
+}
+.dataTables_empty {
+    text-align: center;
+}
+tfoot input {
+    margin: 0.5em 0;
+    width: 100%;
+    color: #444;
+}
+tfoot input.search_init {
+    color: #999;
+}
+td.group {
+    background-color: #d1cfd0 !important;
+    font-weight: bold;
+}
+td.details {
+    background-color: #d1cfd0;
+    border: 2px solid #A19B9E;
+}
+.example_alt_pagination div.dataTables_info {
+    width: 40%;
+}
+.paging_full_numbers a.paginate_button,
+.paging_full_numbers a.paginate_active {
+    /*border: 1px solid #aaa;*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 2px 5px;
+    margin: 0 3px;
+    cursor: pointer;
+    *cursor: hand;
+    color: #333 !important;
+}
+.paging_full_numbers a.paginate_button {
+    /*background-color: #ddd;*/
+}
+.paging_full_numbers a.paginate_button:hover {
+    background-color: #ccc;
+    text-decoration: none !important;
+}
+.paging_full_numbers a.paginate_active {
+    background-color: #99B3FF;
+}
+table.nbgDataTables tr.even.row_selected td {
+    background-color: #dbf8cb; /* B0BED9 */
+}
+table.nbgDataTables tr.odd.row_selected td {
+    background-color: #cde8be; /* 9FAFD1 */
+}
+tr.even {
+    background-color: #F6F6F6;
+}
+tr.odd {
+    background-color: #FFF;
+}
+.nbgDataTables tbody tr.even:hover, .nbgDataTables tbody tr.even td.highlighted {
+    background-color: #eee;
+}
+
+.nbgDataTables tbody tr.odd:hover, .nbgDataTables tbody tr.odd td.highlighted {
+    background-color: #eee;
+}
+
+.dataTables_wrapper .dataTables_length {
+    width: auto;
+    float: left;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    width: auto;
+    float: right;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: left;
+}
+
+.nbgDataTables .datatable-link-toggle-icon {
+    float: left;
+    cursor: pointer;
+    background: url(/img/expand-right.gif) no-repeat;
+    width: 12px;
+    height: 12px;
+    margin-top: 1px;
+    padding: 0;
+}
+
+.nbgDataTables .datatable-link-toggle-icon-hide {
+    background: url(/img/expand-right.gif) no-repeat;
+}
+
+.nbgDataTables .datatable-link-toggle-icon-show {
+    background: url(/img/expand-down.gif) no-repeat;
+}
+
+.nbgDataTables .datatable-link-data {
+    padding-left: 18px;
+}
+
+.nbgDataTables .datatable-link-additional-data {
+    display: none;
+    padding-top: 5px !important;
+}
+
+.nbgDataTables .datatable-link-data ul {    
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nbgDataTables .datatable-link-data ul li {
+    padding: 0px;
+    margin: 0px;
+}
+
+.nbgDataTables input[type="checkbox"] {
+    margin: 1px 0px 1px 0px;
+}
+
+.nbgDataTableHeaderToolbar .dataTables_filter input.search_init {
+    color: #999;
+}
+
+.dataTables_filter input, .fg-toolbar select {
+	border:1px solid; 
+	border-color:#7C7C7C #C3C3C3 #DDD #C3C3C3; 
+	padding:2px 4px 3px 4px;
+	background:#fff;
+	font-size: 12px; 
+}
+
+.dataTables_filter input:focus {
+	border:1px solid #777; 
+	color: #000;
+}
+
+/* Collapsible Grouping */
+.nbgDataTables .expanded-group {
+	background: url("/img/minus.png");
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+    padding-left: 20px !important;
+	cursor:pointer;
+}
+
+.nbgDataTables .collapsed-group {
+    background: url("/img/plus.png");
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+    padding-left: 20px !important;
+	cursor:pointer;
+}
+
+.nbgDataTables .column-center-align { text-align: center; }
+
+.nbgDataTableFooterToolbarHidden .ui-toolbar {
+    min-height: 1px !important;
+    padding: 1px !important;
+}
+
+.nbgDataTables span.ui-icon-folder-collapsed, .nbgDataTables span.ui-icon-folder-open {
+	display: inline-block;
+	cursor: pointer !important;
+	margin-top: -2px;
+	margin-right: 2px;
+}
+
+.nbgDataTables .nbg-group {
+	cursor: pointer !important;
+}

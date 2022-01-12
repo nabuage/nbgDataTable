@@ -1,0 +1,76 @@
+/*.paging_two_button .ui-button {
+    float: left;
+    cursor: pointer;
+    * cursor: hand;
+}*/
+
+/* Paging buttons */
+.paging_full_numbers .ui-button {
+    padding: 2px 6px;
+    margin: 0;
+    cursor: pointer;
+    *cursor: hand;
+    color: #333 !important;
+}
+
+/*.dataTables_paginate .ui-button {
+    margin-right: -0.1em !important;
+}
+
+.paging_full_numbers {
+    width: 350px !important;
+}*/
+
+.dataTables_paginate {
+    width: auto;
+}
+
+/* Toolbar - top/button */
+.dataTables_wrapper .ui-toolbar {
+    padding: 3px 5px 3px 5px;
+	min-height:10px;
+}
+
+.dataTables_wrapper label {
+	font-size: 11px;
+    font-weight: normal;
+}
+
+div.dataTables_wrapper .ui-widget-header {
+    font-weight: normal;
+    background: #cccccc !important;
+}
+
+/* Showing # to # of # entries */
+.dataTables_info {
+    padding-top: 3px;
+}
+
+/* Table header */
+table.nbgDataTables thead th {
+    padding: 3px 0px 3px 10px;
+    cursor: pointer;
+    *cursor: hand;
+}            
+
+table.nbgDataTables thead th div.DataTables_sort_wrapper {
+    position: relative;
+    padding-right: 20px;
+}
+
+table.nbgDataTables thead th div.DataTables_sort_wrapper span {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 0;
+}
+
+
+/* Paging buttons */
+.paging_nbgPaging .ui-button {
+    padding: 2px 6px;
+    margin: 0;
+    cursor: pointer;
+    *cursor: hand;
+    color: #333 !important;
+}

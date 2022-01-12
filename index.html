@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <link href="js/jquery-ui-1.13.0.custom.base/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+		<link href="css/jquery-ui-override.css" type="text/css" rel="stylesheet" />
+        <link href="css/nabuage.datatables.table.css" type="text/css"  rel="stylesheet" />
+        <link href="css/nabuage.datatables.jui.css" type="text/css"  rel="stylesheet" />
+        
+        <script type="text/javascript" src="js/jquery/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.13.0.custom.base/jquery-ui.min.js"></script>
+        <script type="text/javascript" language="javascript" src="js/datatables-1.9.4/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" language="javascript" src="js/datatables-1.9.4/jquery.dataTables.rowGrouping.js"></script>
+        <script type="text/javascript" language="javascript" src="js/nabuageDataTable.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+
+                var table = $("#sample_table1").nbgDataTable({
+                    "sAjaxSource": "data/1.json",
+                    "nbgDataIDIndex": 0,
+                    "aoColumns": [
+                        { "mData": 2, "sTitle": "Program" },
+                        { "mData": 1, "sTitle": "Account" },
+                        { "mData": 3, "sTitle": "First Name" },
+                        { "mData": 4, "sTitle": "Last Name" },
+                        { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
+                    ]
+                });
+
+                var table2 = $("#sample_table2").nbgDataTable({
+                    "sAjaxSource": "data/1.json",
+                    "nbgDataIDIndex": 0,
+                    "aoColumns": [
+                        { "mData": 7, "sTitle": "&nbsp;", "sType": "numeric",  "sWidth": "24px", "bSearchable": false, "nbgDisplayType": "checkbox", "nbgValueIndex": 0,
+                            "nbgAfterOnClick": function(element, data){
+								alert(data);
+							}
+                        },
+                        { "mData": 2, "sTitle": "Program" },
+                        { "mData": 1, "sTitle": "Account" },
+                        { "mData": 3, "sTitle": "First Name" },
+                        { "mData": 4, "sTitle": "Last Name" },
+                        { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
+                    ]
+                });
+
+                var table3 = $("#sample_table3").nbgDataTable({
+                    "sAjaxSource": "data/1.json",
+                    "nbgDataIDIndex": 0,
+                    "aoColumns": [
+                        { "mData": 7, "sTitle": "&nbsp;", "sType": "numeric",  "sWidth": "24px", "bSearchable": false, "nbgDisplayType": "checkbox", "nbgValueIndex": 0,
+                            "nbgAfterOnClick": function(element, data){
+								//alert(data);
+							}
+                        },
+                        { "mData": 2, "sTitle": "Program" },
+                        { "mData": 1, "sTitle": "Account" },
+                        { "mData": 3, "sTitle": "First Name" },
+                        { "mData": 4, "sTitle": "Last Name" },
+                        { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
+                    ]
+                });
+
+                table3.addToolbarButton(
+                    $("<button class='ui-button-action'>New</button>").button({
+                        icons: {
+                            primary: "ui-icon-circle-plus"
+                        }
+                    }).click(function(event) {
+                        alert("New button event.");
+                    })
+                );
+                table3.addToolbarButton(
+                    $("<button id='btn_edit' class='single-select'>Edit</button>").button({
+                        icons: {
+                            primary: "ui-icon-pencil"
+                        }
+                    }).click(function(event) {
+                        alert("Edit button event. Selected Row Data: " + table3.getSelectedRowData());
+                    })
+                );
+                table3.addToolbarButton(
+                    $("<button id='btn_edit' class='multiple-select'>Delete</button>").button({
+                        icons: {
+                            primary: "ui-icon-trash"
+                        }
+                    }).click(function(event) {
+                        alert("Delete button event. Selected Row Data By Index: " + table3.getSelectedRowDataByIndex(0) + ". Call table3.reloadData() to reload the table.");
+                    })
+                );
+            });
+        </script>
+        
+    </head>
+    <body>
+        <h1>Samples</h1>
+        <h2>Generic</h2>
+        <table class="nbgDataTables" id="sample_table1"></table>
+        <h2>With Checkbox</h2>
+        <table class="nbgDataTables" id="sample_table2"></table>
+        <h2>With Action Buttons</h2>
+        <table class="nbgDataTables" id="sample_table3"></table>
+    </body>
+</html>

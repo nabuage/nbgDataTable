@@ -87,6 +87,37 @@
                         alert("Delete button event. Selected Row Data By Index: " + table3.getSelectedRowDataByIndex(0) + ". Call table3.reloadData() to reload the table.");
                     })
                 );
+
+                var table4 = $("#sample_table4").nbgDataTable({
+                    "sAjaxSource": "data/1.json",
+                    "nbgDataIDIndex": 0,
+                    "aoColumns": [
+                        { "mData": 7, "sTitle": "&nbsp;", "sType": "numeric",  "sWidth": "24px", "bSearchable": false, "nbgDisplayType": "checkbox", "nbgValueIndex": 0,
+                            "nbgAfterOnClick": function(element, data){
+								alert("Clicked from a checkbox. " + data);
+							}
+                        },
+                        { 
+                            "mData": 2, 
+                            "sTitle": "Program",
+                            "nbgDisplayType": "link",
+                            "nbgOnClick": function(object, data){
+                                alert("Clicked from a link. " + data);
+                            }
+                        },
+                        { "mData": 1, "sTitle": "Account" },
+                        { "mData": 3, "sTitle": "First Name" },
+                        { "mData": 4, "sTitle": "Last Name" },
+                        { 
+                            "mData": 8, 
+                            "sTitle": "Type",
+                            "sWidth": "24px",
+                            "nbgDisplayType": "image",
+                            "nbgImageSource": "/img/org.png"
+                        },
+                        { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
+                    ]
+                });
             });
         </script>
         
@@ -99,5 +130,7 @@
         <table class="nbgDataTables" id="sample_table2"></table>
         <h2>With Action Buttons</h2>
         <table class="nbgDataTables" id="sample_table3"></table>
+        <h2>With Checkbox, Link and Image Display Type</h2>
+        <table class="nbgDataTables" id="sample_table4"></table>
     </body>
 </html>

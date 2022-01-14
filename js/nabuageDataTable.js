@@ -506,7 +506,7 @@
                                 	var formattedAdditionalData = this.nbgFormatedAdditionalData(additionalData[iCol.toString()], oData);
 
                                     if (formattedAdditionalData !== "") {
-                                        tdHTML = "<div class='datatable-link-toggle-icon' />" +
+                                        tdHTML = "<div class='datatable-link-toggle-icon'></div>" +
                                                 "<div class='datatable-link-data'><ul>" +
                                                 "<li class='datatable-link-text'>" + (prependOnRender[iCol.toString()] !== undefined ? prependOnRender[iCol.toString()](oData) : "") + 
                                                 ((isURL === true) ?
@@ -795,14 +795,14 @@
             	if (!dataLoadIsActive) {
             		config.nbgOnBeforeDataLoad($self.parent());
             	}
-            	console.log(sSource);
+            	
                 oSettings.jqXHR = $.ajax({                	
                 	"dataType": "JSON", 
                 	"type": "GET", 
                 	"url": sSource, 
                 	"data": aoData, 
                 	"success": fnCallback,
-                	"complete": function(data, status) {//console.log(data);console.log(status);
+                	"complete": function(data, status) {
                 		dataLoadIsActive = false;
                 		config.nbgOnAfterDataLoad($self.parent());
             		}

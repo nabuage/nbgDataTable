@@ -9,7 +9,7 @@
         <script type="text/javascript" src="js/jquery-ui-1.13.0.custom.base/jquery-ui.min.js"></script>
         <script type="text/javascript" language="javascript" src="js/datatables-1.9.4/jquery.dataTables.min.js"></script>
         <script type="text/javascript" language="javascript" src="js/datatables-1.9.4/jquery.dataTables.rowGrouping.js"></script>
-        <script type="text/javascript" language="javascript" src="js/nabuageDataTable.js"></script>
+        <script type="text/javascript" language="javascript" src="js/nabuageDataTable.js?1=1"></script>
         
         <script>
             $(document).ready(function(){
@@ -118,6 +118,75 @@
                         { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
                     ]
                 });
+
+                var table5 = $("#sample_table5").nbgDataTable({
+                    "sAjaxSource": "data/2.json",
+                    "nbgDataIDIndex": 0,
+                    "aoColumns": [
+                        { "mData": 7, "sTitle": "&nbsp;", "sType": "numeric",  "sWidth": "24px", "bSearchable": false, "nbgDisplayType": "checkbox", "nbgValueIndex": 0,
+                            "nbgAfterOnClick": function(element, data){
+								alert("Clicked from a checkbox. " + data);
+							}
+                        },
+                        { 
+                            "mData": 2, 
+                            "sTitle": "Program",
+                            "nbgDisplayType": "link",
+                            "nbgOnClick": function(object, data){
+                                alert("Clicked from a link. " + data);
+                            },
+                            "nbgAdditionalData": [
+                                "<strong>Manager:</strong> [9] [10]"
+                            ]
+                        },
+                        { "mData": 1, "sTitle": "Account" },
+                        { "mData": 3, "sTitle": "First Name" },
+                        { "mData": 4, "sTitle": "Last Name" },
+                        { 
+                            "mData": 8, 
+                            "sTitle": "Type",
+                            "sWidth": "24px",
+                            "nbgDisplayType": "image",
+                            "nbgImageSource": "/img/org.png"
+                        },
+                        { "mData": 5, "sTitle": "Date Modified", "sType": "date", "sWidth" : "250px", "bSearchable": false, "nbgTimezoneIndex": 6 }
+                    ],
+                    "bLengthChange": false, 
+                    "bPaginate": false
+                }).rowGrouping({
+                    iGroupingColumnIndex: 2, 
+                    iGroupingOrderByColumnIndex2: 2,
+                    bExpandableGrouping: true,
+                    asExpandedGroups: []
+                });
+
+                table5.addToolbarButton(
+                    $("<button class='ui-button-action'>New</button>").button({
+                        icons: {
+                            primary: "ui-icon-circle-plus"
+                        }
+                    }).click(function(event) {
+                        alert("New button event.");
+                    })
+                );
+                table5.addToolbarButton(
+                    $("<button id='btn_edit' class='single-select'>Edit</button>").button({
+                        icons: {
+                            primary: "ui-icon-pencil"
+                        }
+                    }).click(function(event) {
+                        alert("Edit button event. Selected Row Data: " + table5.getSelectedRowData());
+                    })
+                );
+                table5.addToolbarButton(
+                    $("<button id='btn_edit' class='multiple-select'>Delete</button>").button({
+                        icons: {
+                            primary: "ui-icon-trash"
+                        }
+                    }).click(function(event) {
+                        alert("Delete button event. Selected Row Data By Index: " + table5.getSelectedRowDataByIndex(0) + ". Call table3.reloadData() to reload the table.");
+                    })
+                );
             });
         </script>
         
@@ -132,5 +201,7 @@
         <table class="nbgDataTables" id="sample_table3"></table>
         <h2>With Checkbox, Link and Image Display Type</h2>
         <table class="nbgDataTables" id="sample_table4"></table>
+        <h2>With Grouping (and collapsible additional data)</h2>
+        <table class="nbgDataTables" id="sample_table5"></table>
     </body>
 </html>
